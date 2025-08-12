@@ -11,34 +11,45 @@ New tokens are automatically added to the dictionary and saved for future runs.
 - Special start/end tokens for wrapped sequences.
 
 ## 📂 Project Structure
+```
 .
-├── main_file.js # Entry point - handles user input & displays results
-├── simple_tokenizer.js # Tokenizer class with vocab management & encoding logic
-└── token_dictionary.json # Vocabulary file (auto-created/updated)
-
+├── main_file.js           # Entry point - handles user input & displays results
+├── simple_tokenizer.js    # Tokenizer class with vocab management & encoding logic
+└── token_dictionary.json  # Vocabulary file (auto-created/updated)
+```
 
 ## ⚙️ Installation & Usage
 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/sandeep5shetty/simple-tokenizer
-cd simple_tokenizer
+cd simple-tokenizer
+```
 
-###2️⃣ Install Dependencies
-
+### 2️⃣ Install Dependencies
+```bash
 npm install prompt-sync
+```
 
-###3️⃣ Run the Program
+### 3️⃣ Run the Program
+```bash
 node main_file.js
+```
 
-
-Example Run
+### Example Run
+```
 Enter your text: Hello world!
 INPUT: "Hello world!"
 
 TOKENS:  | Hello | world | !
 TOKEN IDs: 0 | 1 | 2 | 3
 OUTPUT SET: [0, 1, 2, 3]
+```
+
+## 🛠 How It Works
+1. **Tokenization** – Splits input into words, numbers, punctuation using regex.
+2. **Vocabulary Management** – Checks if token exists in `token_dictionary.json`;  
+   - If yes → retrieves its ID.  
+   - If no → assigns next ID
 
 
-Author: Sandeep Shetty
