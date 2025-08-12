@@ -83,6 +83,25 @@ class Tokenizer {
 
         return result;
     }
+
+
+    getReverseVocab() {
+        const reverseVocab = {};
+        Object.keys(this.vocab).forEach(token => {
+            reverseVocab[this.vocab[token]] = token;
+        });
+        return reverseVocab;
+    }
+
+    // Decode token IDs back to text
+    decode(tokenIds) {
+        const reverseVocab = this.getReverseVocab();
+        return tokenIds
+            .map(id => reverseVocab[id] || '<UNK>')
+            .filter(token => !['<BOS>', '<EOS>'].includes(token))
+            .join(' ')
+            .replace(/\s+([.,!?;:])/g, '$1');
+    }
 }
 
 module.exports = { Tokenizer };

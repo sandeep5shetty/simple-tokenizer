@@ -38,12 +38,22 @@ node main_file.js
 
 ### Example Run
 ```
-Enter your text: Hello world!
-INPUT: "Hello world!"
+INPUT: "My name is Sandy"
 
-TOKENS:  | Hello | world | !
-TOKEN IDs: 0 | 1 | 2 | 3
-OUTPUT SET: [0, 1, 2, 3]
+New token added to dictionary ===> My:165
+
+New token added to dictionary ===> name:166
+
+New token added to dictionary ===> Sandy:167
+
+----ENCODING----
+Tokens :  <BOS> | My | name | is | Sandy | <EOS>
+Token IDs:  1 | 165 | 166 | 149 | 167 | 2
+Output Set of Tokens :  [1, 165, 166, 149, 167, 2]
+
+----DECODING----
+Tokens :  [1, 165, 166, 149, 167, 2]
+Decoded Text :  "My name is Sandy"
 ```
 
 ## 🛠 How It Works
